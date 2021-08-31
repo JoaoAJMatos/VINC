@@ -7,6 +7,7 @@ import socket
 import termcolor
 import json
 import help
+import os
 
 def send(data):
     jsonData = json.dumps(data)
@@ -35,6 +36,9 @@ def targetComs():
 
         if prompt == 'exit': # Exit the loop if the exit message is sent
             break
+
+        elif prompt == 'clear': # Clear the screen
+            os.system('clear')
 
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))
