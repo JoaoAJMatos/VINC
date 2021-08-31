@@ -1,6 +1,12 @@
+# WARNING: If the server does not start and retrieves the OSError 98 
+# of "Address already in use", use the "ps -fA | grep python" command
+# to check the PID of the service and kill it with the "kill -9 (PID)"
+# command; (replace (PID) by the actual PID)
+
 import socket
 import termcolor
 import json
+import help
 
 def send(data):
     jsonData = json.dumps(data)
@@ -30,8 +36,12 @@ def targetComs():
         if prompt == 'exit': # Exit the loop if the exit message is sent
             break
 
-        response = recv()
-        print(response)
+        elif prompt == 'help': # List all the available commands to the user
+            print(termcolor.colored(help.HELP, 'green'))
+
+        else:
+            response = recv()
+            print(response)
 
 # Connection data
 HOST = '127.0.0.1'
