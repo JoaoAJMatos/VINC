@@ -39,6 +39,9 @@ def targetComs():
 
         elif prompt == 'clear': # Clear the screen
             os.system('clear')
+        
+        elif prompt[:3] == 'cd ': # (Change directory implementation on the client-side)
+            pass
 
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))

