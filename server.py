@@ -9,6 +9,7 @@ import json
 import help
 import os
 
+
 def send(data):
     jsonData = json.dumps(data)
     target.send(jsonData.encode())
@@ -95,7 +96,6 @@ def targetComs():
         elif prompt[:10]  == 'screenshot':
             screenshotRecv(count)
             count += 1
-
 
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))
