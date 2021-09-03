@@ -98,7 +98,7 @@ The following commands can **only** be executed inside an individual backdoor se
 
 > #### Additional commands
 
-Vinc is also able to run every Windows command on the target's machine
+Vinc is also able to run every Windows command on the target's machine remotly
 
 ## I want to contribute!
 
