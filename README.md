@@ -9,11 +9,11 @@ The following code is not finished and is under heavy development. **Experimenta
 
 :exclamation: _**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor :exclamation:
 
-### Description :scroll:
+## Description :scroll:
 
 Vinc is a backdoor tool initially developed to spy on Windows machines, giving free access to all kinds of information about the target/s.
 
-### How it works :gear:
+## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
 The Command & Control Center (CMD&CTRL) is responsible for both handling the connections (acting as the server) and sending commands.
@@ -22,9 +22,9 @@ Every time a machine connects to the server a new Target ID is created. The CMD&
 
 Commands can also be sent via broadcasting to all the connected machines, giving the attacker the ability to execute commands on every machine **simultainiously**
 
-### Screenshots :camera:
+## Screenshots :camera:
 
-### Commands :computer:
+## Commands :computer:
 
 Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
 
@@ -61,7 +61,11 @@ The following commands can **only** be executed inside an individual backdoor se
 | `stream-start` | **None** | Starts screensharing. Enables the attacker to see what the target is doing in real time |
 | `stream-stop` | **None** | Stops screensharing
 
-### Legal Advice :oncoming_police_car:
+> #### Additional commands
+
+Vinc is also able to run every Windows command on the target's machine
+
+## Legal Advice :oncoming_police_car:
 
 This repository and **every script** inside it is for educational and testing purposes **only**. The creator nor **any** contributor will be responsible for the consequences of your actions.
 
