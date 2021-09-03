@@ -1,17 +1,17 @@
-# VINC v0.9.6
+# VINC - 0.9.6
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 > Python backdoor for windows machines :busts_in_silhouette:
 
-> :warning: __**Attention**__: Project under development :warning:
+> :warning: _**Attention**_: Project under development :warning:
 
 The following code is not finished and is under heavy development. **Experimental features are being added every day**.
 
-__**Do not**__ use this code in order to develop a stable bug-free undetectable backdoor.
+_**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor.
 
 ## Description
 
-Vinc is a backdoor tool initially developed to spy on Windows machines, giving free access to all kinds of information about the target.
+Vinc is a backdoor tool initially developed to spy on Windows machines, giving free access to all kinds of information about the target/s.
 
 ## How it works
 
@@ -23,3 +23,7 @@ Every time a machine connects to the server a new Target ID is created. The CMD&
 Commands can also be sent via broadcasting to all the connected machines, giving the attacker the ability to execute commands on every machine **simultainiously**
 
 ## Screenshots
+
+## Commands
+
+Vinc is able to execute commands 
