@@ -13,6 +13,12 @@ The following code is not finished and is under heavy development. **Experimenta
 
 Vinc is a backdoor tool initially developed to spy on Windows machines, giving free access to all kinds of information about the target/s.
 
+## Download vinc
+
+```
+git clone https://github.com/JoaoAJMatos/VINC.git
+```
+
 ## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
