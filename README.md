@@ -53,7 +53,7 @@ Commands can also be sent via broadcasting to all the connected machines, giving
 
 ## Is it detectable? :mag_right:
 
-**YES**! Vinc is detectable and the connection can be traced down to you!
+**YES**! Vinc is considered malicious software by 10 of the 67 most popular anti-virus softwares. All the connections made and packets transmited over the internet can also be traced down to you!
 
 ## Screenshots :camera:
 
