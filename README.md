@@ -46,7 +46,7 @@ The following commands can be executed inside the the CMD&CTRL shell:
 The following commands can **only** be executed inside an individual backdoor session
 
 | **Command** | **Arguments** | **Description** |
-| ----------- | ------------- | --------------- |
+| :---------: | :-----------: | --------------- |
 | `clear` | **None** | Clears the screen |
 | `exit` | **None** | Kills and exits the current backdoor session |
 | `background` | **None** | Exits the current session and returns to the CMD&CTRL Center |
