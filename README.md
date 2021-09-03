@@ -73,6 +73,7 @@ The following commands can be executed inside the the CMD&CTRL shell:
 |   `using` | **Session ID** | Enters the specified backdoor session
 |   `kill`  | **Session ID** | Kills the specified backdoor session
 |   `shutdown` | **None** | Kills all the online backdoor sessions and turns off the CMD&CTRL Center
+|   `terminate-all` | **None** | Remotly turns off every computer that's connected to the network
 |   `broadcast` | **Command** | Sends the specified command to all online backdoor sessions
 
 >#### Individual backdoor session commands
