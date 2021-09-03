@@ -27,6 +27,8 @@ To run VINC's command and control center simply run:
 python commandCenter.py
 ```
 
+:exclamation: Although it can be used on any machine, the command and control center was made to run on a Linux machine, therefore some commands may not work and some bugs may occur when running the script on a Windows machine :exclamation:
+
 The backdoor can be converted into an executable file in order to be delivered to the target's machine:
 
 ```
