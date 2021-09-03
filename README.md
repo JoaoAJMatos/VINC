@@ -3,11 +3,11 @@
 
 > Python backdoor for windows machines :busts_in_silhouette:
 
-> :warning: **Attention**: Project under development
+> :warning: __**Attention**__: Project under development :warning:
 
-The following code is not finished and is under heavy development. Experimental features are being added every day.
+The following code is not finished and is under heavy development. **Experimental features are being added every day**.
 
-**Do not** use this code in order to develop a stable bug-free undetectable backdoor.
+__**Do not**__ use this code in order to develop a stable bug-free undetectable backdoor.
 
 ## Description
 
@@ -19,5 +19,7 @@ All the machines running vinc will connect to the vinc server automatically and 
 The Command & Control Center (CMD&CTRL) is responsible for both handling the connections (acting as the server) and sending commands.
 
 Every time a machine connects to the server a new Target ID is created. The CMD&CTRL Center can then use that machine's target ID to interact with that specific session of the backdoor.
+
+Commands can also be sent via broadcasting to all the connected machines, giving the attacker the ability to execute commands on every machine **simultainiously**
 
 ## Screenshots
