@@ -34,3 +34,4 @@ Vinc is able to execute commands both in the CMD&CTRL Center and inside a specif
 | ----------- | ------------- | --------------- |
 |   `clear`   |   **None**    | Clears the screen |
 |   `list-targets`   |   **None**    | Displays all the online backdoor sessions with their corresponding session ID |
+|   `using` | **Session ID** | Enters the specified backdoor session
