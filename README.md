@@ -62,3 +62,7 @@ The following commands can **only** be executed inside an individual backdoor se
 | `stream-stop` | **None** | Stops screensharing
 
 ### Legal Advice :oncoming_police_car:
+
+This repository and **every script** inside it is for educational and testing purposes **only**. The creator nor **any** contributor will be responsible for the consequences of your actions.
+
+Only use vinc with the full consent of the targeted machine's owner. 
