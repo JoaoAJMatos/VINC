@@ -93,7 +93,7 @@ The following commands can **only** be executed inside an individual backdoor se
 | `keylog-stop` | **-** | Stops the keylogger at the current backdoor session and delets the keylogger file from the target's fyle system |
 | `persistence` | **RegName**, **FileName** | Creates a persistent session inside the target's PC. Every time the target boots the system the backdoor will start |
 | `screenshot` | **-** | Takes a screenshot of the current backdoor session screen |
-| `stream-start` | **-** | Starts screensharing. Enables the attacker to see what the target is doing in real time |
+| `stream-start` | **-** | Starts screensharing |
 | `stream-stop` | **-** | Stops screensharing
 
 > #### Additional commands
