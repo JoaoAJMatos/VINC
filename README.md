@@ -36,6 +36,10 @@ pip install pyinstaller
 pyinstaller backdoor.py --onefile --noconsole
 ```
 
+_**Note**_: The final build will change according to the host's architecture. Building the .exe file on a 64-bit machine would make the program unusable when opened on a 32-bit machine.
+
+To run the backdoor double click the .exe file. The connection will be automatically astablished with the server after 15 seconds. If the server is offline, the backdoor will attempt to connect every 15 seconds until a connection is finaly made.
+
 ## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
