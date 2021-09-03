@@ -5,9 +5,9 @@
 
 > :warning: _**Attention**_: Project under development :warning:
 
-:exclamation: The following code is not finished and is under heavy development. **Experimental features are being added every day** :exclamation:
+> :exclamation: The following code is not finished and is under heavy development. **Experimental features are being added every day** :exclamation:
 
-:exclamation: _**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor :exclamation:
+> :exclamation: _**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor :exclamation:
 
 ## Description :scroll:
 
