@@ -73,6 +73,6 @@ Vinc is also able to run every Windows command on the target's machine
 
 ## Legal Advice :oncoming_police_car:
 
-This repository and **every script** inside it is for educational and testing purposes **only**. The creator nor **any** contributor will be responsible for the consequences of your actions.
+This repository and **every script** inside it are for educational and testing purposes **only**. The creator nor **any** contributor will be responsible for the consequences of your actions.
 
-Only use vinc with the full consent of the targeted machine's owner. 
+:exclamation: Only use vinc with the full consent of the targeted machine's owner :exclamation: 
