@@ -65,6 +65,7 @@ Vinc is able to execute commands both in the CMD&CTRL Center and inside a specif
 
 The following commands can be executed inside the the CMD&CTRL shell:
 
+| :---------: | :-----------: | :-------------: |
 | **Command** | **Arguments** | **Description** |
 | :---------: | :-----------: | :------------- |
 |   `clear`   |   **None**    | Clears the screen |
