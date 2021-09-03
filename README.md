@@ -99,6 +99,10 @@ The following commands can **only** be executed inside an individual backdoor se
 
 Vinc is also able to run every Windows command on the target's machine
 
+## I want to contribute!
+
+Vinc is currently in a closed-beta development status and is higly unstable. Submissions to the repository are currently closed but you can report errors and bugs! 
+
 ## Legal Advice :oncoming_police_car:
 
 This repository and **every script** inside it are for educational and testing purposes **only**. The creator nor **any** contributor will be responsible for the consequences of your actions.
