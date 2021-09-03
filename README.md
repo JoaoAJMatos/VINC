@@ -66,7 +66,7 @@ Vinc is able to execute commands both in the CMD&CTRL Center and inside a specif
 The following commands can be executed inside the the CMD&CTRL shell:
 
 | **Command** | **Arguments** | **Description** |
-| :---------: | :-----------: | :-------------: |
+| :---------: | :-----------: | :------------- |
 |   `clear`   |   **None**    | Clears the screen |
 |   `list-targets`   |   **None**    | Displays all the online backdoor sessions with their corresponding session ID |
 |   `using` | **Session ID** | Enters the specified backdoor session
@@ -79,7 +79,7 @@ The following commands can be executed inside the the CMD&CTRL shell:
 The following commands can **only** be executed inside an individual backdoor session
 
 | **Command** | **Arguments** | **Description** |
-| :---------: | :-----------: | :-------------: |
+| :---------: | :-----------: | :------------- |
 | `clear` | **None** | Clears the screen |
 | `exit` | **None** | Kills and exits the current backdoor session |
 | `background` | **None** | Exits the current session and returns to the CMD&CTRL Center |
