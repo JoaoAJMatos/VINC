@@ -27,3 +27,8 @@ Commands can also be sent via broadcasting to all the connected machines, giving
 ## Commands
 
 Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
+
+### CMD&CTRL Center commands
+
+| **Command** | **Arguments** | **Description** |
+| ----------- | ------------- | --------------- |
