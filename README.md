@@ -19,6 +19,14 @@ Vinc is a backdoor tool initially developed to spy on Windows machines, giving f
 git clone https://github.com/JoaoAJMatos/VINC.git
 ```
 
+## Run vinc
+
+To run VINC's command and control center simply run:
+
+```
+python commandCenter.py
+```
+
 ## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
