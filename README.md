@@ -51,6 +51,10 @@ Every time a machine connects to the server a new Target ID is created. The CMD&
 
 Commands can also be sent via broadcasting to all the connected machines, giving the attacker the ability to execute commands on every machine **simultainiously**
 
+## Is it detectable? :mag_right:
+
+**YES**! Vinc is detectable and the connection can be traced down to you!
+
 ## Screenshots :camera:
 
 ## Commands :computer:
