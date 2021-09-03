@@ -68,12 +68,12 @@ The following commands can be executed inside the the CMD&CTRL shell:
 
 | **Command** | **Arguments** | **Description** |
 | :---------: | :-----------: | :-------------: |
-|   `clear`   |   **None**    | Clears the screen |
-|   `list-targets`   |   **None**    | Displays all the online backdoor sessions with their corresponding session ID |
+|   `clear`   |   **-**    | Clears the screen |
+|   `list-targets`   |   **-**    | Displays all the online backdoor sessions with their corresponding session ID |
 |   `using` | **Session ID** | Enters the specified backdoor session
 |   `kill`  | **Session ID** | Kills the specified backdoor session
-|   `shutdown` | **None** | Kills all the online backdoor sessions and turns off the CMD&CTRL Center
-|   `terminate-all` | **None** | Remotly turns off every computer that's connected to the network
+|   `shutdown` | **-** | Kills all the online backdoor sessions and turns off the CMD&CTRL Center
+|   `terminate-all` | **-** | Remotly turns off every computer that's connected to the network
 |   `broadcast` | **Command** | Sends the specified command to all online backdoor sessions
 
 >#### Individual backdoor session commands
