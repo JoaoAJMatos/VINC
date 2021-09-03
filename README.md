@@ -28,12 +28,12 @@ Commands can also be sent via broadcasting to all the connected machines, giving
 
 Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
 
-#### CMD&CTRL Center commands
+>#### CMD&CTRL Center commands
 
 The following commands can be executed inside the the CMD&CTRL shell:
 
 | **Command** | **Arguments** | **Description** |
-| ----------- | ------------- | --------------- |
+| :---------: | :-----------: | :-------------: |
 |   `clear`   |   **None**    | Clears the screen |
 |   `list-targets`   |   **None**    | Displays all the online backdoor sessions with their corresponding session ID |
 |   `using` | **Session ID** | Enters the specified backdoor session
@@ -41,12 +41,12 @@ The following commands can be executed inside the the CMD&CTRL shell:
 |   `shutdown` | **None** | Kills all the online backdoor sessions and turns off the CMD&CTRL Center
 |   `broadcast` | **Command** | Sends the specified command to all online backdoor sessions
 
-#### Individual backdoor session commands
+>#### Individual backdoor session commands
 
 The following commands can **only** be executed inside an individual backdoor session
 
 | **Command** | **Arguments** | **Description** |
-| :---------: | :-----------: | --------------- |
+| :---------: | :-----------: | :-------------: |
 | `clear` | **None** | Clears the screen |
 | `exit` | **None** | Kills and exits the current backdoor session |
 | `background` | **None** | Exits the current session and returns to the CMD&CTRL Center |
