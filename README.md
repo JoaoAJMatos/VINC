@@ -1,4 +1,4 @@
-# VINC - 0.9.6
+# VINC - 0.9.6 :door:
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 > :busts_in_silhouette: Python backdoor for windows machines :busts_in_silhouette:
@@ -7,13 +7,13 @@
 
 The following code is not finished and is under heavy development. **Experimental features are being added every day**.
 
-_**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor.
+:exclamation: _**Do not**_ use this code in order to develop a stable bug-free undetectable backdoor :exclamation:
 
-## Description
+## Description :scroll:
 
 Vinc is a backdoor tool initially developed to spy on Windows machines, giving free access to all kinds of information about the target/s.
 
-## How it works
+## How it works :gear:
 
 All the machines running vinc will connect to the vinc server automatically and will be able to run commands remotely.
 The Command & Control Center (CMD&CTRL) is responsible for both handling the connections (acting as the server) and sending commands.
@@ -22,9 +22,9 @@ Every time a machine connects to the server a new Target ID is created. The CMD&
 
 Commands can also be sent via broadcasting to all the connected machines, giving the attacker the ability to execute commands on every machine **simultainiously**
 
-## Screenshots
+## Screenshots :camera:
 
-## Commands
+## Commands :computer:
 
 Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
 
@@ -60,3 +60,5 @@ The following commands can **only** be executed inside an individual backdoor se
 | `screenshot` | **None** | Takes a screenshot of the current backdoor session screen |
 | `stream-start` | **None** | Starts screensharing. Enables the attacker to see what the target is doing in real time |
 | `stream-stop` | **None** | Stops screensharing
+
+## Legal Advice :oncoming_police_car:
