@@ -82,19 +82,19 @@ The following commands can **only** be executed inside an individual backdoor se
 
 | **Command** | **Arguments** | **Description** |
 | :---------: | :-----------: | :-------------: |
-| `clear` | **None** | Clears the screen |
-| `exit` | **None** | Kills and exits the current backdoor session |
-| `background` | **None** | Exits the current session and returns to the CMD&CTRL Center |
-| `help` | **None** | Lists all the current available commands
+| `clear` | **-** | Clears the screen |
+| `exit` | **-** | Kills and exits the current backdoor session |
+| `background` | **-** | Exits the current session and returns to the CMD&CTRL Center |
+| `help` | **-** | Lists all the current available commands
 | `upload` | **Path** | Uploads the specified file to the targets file system |
 | `download` | **Path** | Downloads a file from the targets file system |
-| `keylog-start` | **None** | Starts the keylogger at the current backdoor session |
-| `keylog-dump` | **None** | Show the keylogger log on the screen |
-| `keylog-stop` | **None** | Stops the keylogger at the current backdoor session and delets the keylogger file from the target's fyle system |
+| `keylog-start` | **-** | Starts the keylogger at the current backdoor session |
+| `keylog-dump` | **-** | Show the keylogger log on the screen |
+| `keylog-stop` | **-** | Stops the keylogger at the current backdoor session and delets the keylogger file from the target's fyle system |
 | `persistence` | **RegName**, **FileName** | Creates a persistent session inside the target's PC. Every time the target boots the system the backdoor will start |
-| `screenshot` | **None** | Takes a screenshot of the current backdoor session screen |
-| `stream-start` | **None** | Starts screensharing. Enables the attacker to see what the target is doing in real time |
-| `stream-stop` | **None** | Stops screensharing
+| `screenshot` | **-** | Takes a screenshot of the current backdoor session screen |
+| `stream-start` | **-** | Starts screensharing. Enables the attacker to see what the target is doing in real time |
+| `stream-stop` | **-** | Stops screensharing
 
 > #### Additional commands
 
