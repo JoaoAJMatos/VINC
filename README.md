@@ -1,7 +1,7 @@
 # VINC - 0.9.6
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-> Python backdoor for windows machines :busts_in_silhouette:
+> :busts_in_silhouette: Python backdoor for windows machines :busts_in_silhouette:
 
 > :warning: _**Attention**_: Project under development :warning:
 
@@ -26,4 +26,4 @@ Commands can also be sent via broadcasting to all the connected machines, giving
 
 ## Commands
 
-Vinc is able to execute commands 
+Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
