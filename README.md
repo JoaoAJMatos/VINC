@@ -56,7 +56,7 @@ Commands can also be sent via broadcasting to all the connected machines, giving
 **YES**! Vinc is considered malicious software by 10 of the 67 most popular anti-virus softwares. All the connections made and packets transmited over the internet can also be traced down to you! :feet:
 
 ## Screenshots :camera:
-
+todo
 ## Commands :computer:
 
 Vinc is able to execute commands both in the CMD&CTRL Center and inside a specific backdoor session. **The following tables contain all of the available commands in version _0.9.6_.**
