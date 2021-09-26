@@ -11,7 +11,7 @@ import time
 from vidstream import ScreenShareClient
 
 # Connection data
-HOST = '188.251.33.6'
+HOST = '127.0.0.1'
 PORT = 5555
 STREAMING_PORT = 9999
 streamFlag = 0
