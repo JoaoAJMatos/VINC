@@ -12,7 +12,7 @@ from vidstream import StreamingServer
 import threading
 
 # Connection data
-HOST = '192.168.1.110'
+HOST = '127.0.0.1'
 PORT = 5555
 STREAM_PORT = 9999
 streamFlag = 0
