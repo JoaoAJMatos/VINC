@@ -52,7 +52,7 @@ def downloadFileRecv(fileName):
     s.settimeout(None)
     f.close()
 
-# Upload file to the server's fyle system
+# Upload file to the server's file system
 def uploadFile(fileName):
     f = open(fileName, 'rb') # Open the file on 'read bytes' mode
     s.send(f.read())
