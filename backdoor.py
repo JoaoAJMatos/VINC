@@ -13,7 +13,7 @@ from requests import get
 import urllib
 
 # Connection data
-HOST = '188.251.33.6'
+HOST = 'dgwIP.0.0.0'
 PORT = 5555
 STREAMING_PORT = 9999
 streamFlag = 0
